@@ -1,6 +1,3 @@
-from pyodbc import connect
-
-
 DB_CONFIG = {
     'driver': '{ODBC Driver 17 for SQL Server}',
     'server': r'localhost\SQLEXPRESS',
@@ -13,6 +10,7 @@ def get_db_connection():
     Connects to the local Microsoft SQL express database and returns a database
     connection string object, used by the cursor for queries and inserts.
     """
+    from pyodbc import connect # keeping inside to prevent remote import errors
     conn_str = (
         f"DRIVER={DB_CONFIG['driver']};"
         f"SERVER={DB_CONFIG['server']};"
