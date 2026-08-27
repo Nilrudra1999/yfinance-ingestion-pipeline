@@ -1,3 +1,5 @@
 etl_venv/
 .vscode/
 financial_market_data*
+etl/__pycache__/
+transformed_data.json
